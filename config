@@ -1,0 +1,7 @@
+mode=drun
+allow_images=true
+prompt=search the app and select, drun
+height=50%
+width=60%
+location=top_center
+image_size=32
