@@ -1,0 +1,154 @@
+/*****----- Configuration -----*****/
+configuration{
+	show-icons: true;
+}
+/*****----- Global Properties -----*****/
+
+@import "~/.config/rofi/walswitcher/colors.rasi"
+@import "~/.config/rofi/walswitcher/fonts.rasi"
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    height:                      400px;
+    width:                       1300px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      1px solid;
+    border-radius:               0px;
+    border-color:                @Selection;
+    cursor:                      "default";
+    background-color:            @background;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     20px;
+    background-color:            transparent;
+	orientation: vertical;
+	horizontal-align: 0.5;
+	vertical-align: 0.5;
+    children:                    [ "inputbar", "message", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     0px;
+    border:                      0px;
+    border-radius:               0px;
+    border-color:                @Selection;
+    background-color:            transparent;
+    text-color:                  @Foreground;
+    children:                    [ "textbox-prompt-colon", "prompt"];
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "";
+    padding:                     10px 13px;
+    border-radius:               0px;
+    background-color:            @Cyan;
+    text-color:                  @background;
+}
+
+prompt {
+    enabled:                     true;
+    padding:                     10px;
+    border-radius:               0px;
+    background-color:            @Green;
+    text-color:                  @background;
+}
+
+/*****----- Message -----*****/
+message {
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @Selection;
+    background-color:            @background;
+    text-color:                  @Foreground;
+}
+textbox {
+    background-color:            inherit;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       5;
+    cycle:                       true;
+    scrollbar:                   false;
+    layout:                      horizontal;
+    spacing:                     15px;
+    background-color:            transparent;
+    cursor:                      "default";
+	vertical-align: 0.5;
+	horizontal-align: 0.5;
+}
+
+/*****----- Elements -----*****/
+
+element-icon{
+        size: 12em;
+        background-color: transparent;
+}
+element {
+        enabled: true;
+	orientation: vertical;
+        padding: 10px;
+        border: 0px solid;
+        border-radius: 0px;
+	spacing: 10px;
+	border-color: @Selection;
+	background-color: transparent;
+	text-color: transparent;
+	cursor: pointer;
+}
+element-text {
+	enabled: false;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color:            var(background);
+    text-color:                  var(Foreground);
+}
+element normal.urgent,
+element alternate.urgent,
+element selected.active {
+    background-color:            var(Red);
+    text-color:                  var(background);
+}
+element normal.urgent,
+element alternate.urgent,
+element selected.active {
+    background-color:            var(Red);
+    text-color:                  var(background);
+}
+element normal.active,
+element alternate.active,
+element selected.urgent {
+    background-color:            var(Cyan);
+    text-color:                  var(background);
+}
+element selected.normal {
+    background-color:            var(Selection);
+    text-color:                  var(background);
+}
